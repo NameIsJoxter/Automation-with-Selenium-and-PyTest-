@@ -31,4 +31,3 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
-        self.driver.sleep(30000)

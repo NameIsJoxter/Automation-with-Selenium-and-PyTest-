@@ -11,7 +11,9 @@ class LoginPageLocators():
     REGISTER_FORM = (By.CSS_SELECTOR, '#register_form')
 
 class ProductPageLocators():
-    PRODUCT_NAME = (By.CSS_SELECTOR, '.product_main > h1')
+    PRODUCT_NAME = (By.CSS_SELECTOR, '.product_main h1')
     PRODUCT_COST = (By.CSS_SELECTOR, '.price_color')
     ADD_TO_BASKET_BTN = (By.CSS_SELECTOR, '.btn-add-to-basket')
-    BASKET_INFO = (By.CSS_SELECTOR, '.basket-mini')
+    # POPUPS = (By.CSS_SELECTOR, '.alertinner')
+    PRODUCT_NAME_POPUP = (By.XPATH,'')
+    BASKET_TOTAL_POPUP = (By.XPATH, '')
