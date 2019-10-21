@@ -1,6 +1,7 @@
 import pytest
-from pages.product_page import ProductPage
 import time
+from pages.product_page import ProductPage
+from pages.login_page import LoginPage
 
 link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019'
 
@@ -39,3 +40,13 @@ def test_message_disappeared_after_adding_product_to_basket(driver):
     page.solve_quiz_and_get_code()
     time.sleep(1)
     page.should_desappear_message_about_adding()
+
+def test_guest_can_go_to_login_page_from_product_page(driver):
+    page = ProductPage(driver, link)
+    page.open()
+    page.should_be_login_link()
+    page.go_to_login_page()
+    login_page = LoginPage(driver, driver.current_url)
+    login_page.should_be_login_page()
+    login_page.should_be_login_form()
+    login_page.should_be_register_form()
