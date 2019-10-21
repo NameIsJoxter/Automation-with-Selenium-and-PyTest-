@@ -16,6 +16,10 @@ class BasePage:
         link = self.driver.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
 
+    def go_to_basket_page(self):
+        btn = self.driver.find_element(*BasePageLocators.BASKET_BTN)
+        btn.click()
+
     def is_disappeared(self, how, what, timeout=4):
         try:
             WebDriverWait(self.driver, timeout, 1, TimeoutException). \
