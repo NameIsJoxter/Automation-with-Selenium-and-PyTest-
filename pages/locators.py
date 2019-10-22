@@ -10,13 +10,13 @@ class BasePageLocators:
 
 
 class BasketPageLocators:
-    BASKET_URL = (driver.current_url, 'http://selenium1py.pythonanywhere.com/en-gb/basket/')
+    BASKET_URL = (driver.current_url, 'http://selenium1py.pythonanywhere.com/en-gb/basket/')        # WTD: get rid of hardcode for en-gb
     BASKET_ITEMS = (By.CSS_SELECTOR,'.basket-items')
     EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, '#content_inner > p')
 
 
 class LoginPageLocators:
-    LOGIN_URL = (driver.current_url, 'http://selenium1py.pythonanywhere.com/en-gb/accounts/login/')
+    LOGIN_URL = (driver.current_url, 'http://selenium1py.pythonanywhere.com/en-gb/accounts/login/')     # WTD: get rid of hardcode for en-gb
     LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')
     REGISTER_FORM = (By.CSS_SELECTOR, '#register_form')
 
