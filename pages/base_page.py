@@ -24,7 +24,7 @@ class BasePage:
         try:
             WebDriverWait(self.driver, timeout, 1, TimeoutException). \
                 until_not(EC.presence_of_element_located((how, what)))
-        except TimeoutException:
+        except Exception:
             return False
         return True
 
