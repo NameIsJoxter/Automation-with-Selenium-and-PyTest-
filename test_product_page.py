@@ -8,6 +8,7 @@ link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?prom
 
 
 class TestGuestAddToBasketFromProductPage():
+    @pytest.mark.need_review
     def test_guest_can_add_product_to_basket(self, driver):
         page = ProductPage(driver, link)
         page.open()
@@ -19,6 +20,7 @@ class TestGuestAddToBasketFromProductPage():
         page.should_be_message_basket_total()
         page.product_cost_should_be_equal_basket_total_in_success_message()
 
+    @pytest.mark.xfail
     def test_guest_cant_see_success_message_after_adding_product_to_basket(self, driver):
         page = ProductPage(driver, link)
         page.open()
@@ -26,13 +28,12 @@ class TestGuestAddToBasketFromProductPage():
         page.solve_quiz_and_get_code()
         page.should_not_be_message_about_adding()
 
-    # @pytest.mark.skip
     def test_guest_cant_see_success_message(self, driver):
         page = ProductPage(driver, link)
         page.open()
         page.should_not_be_message_about_adding()
 
-    # @pytest.mark.skip
+    @pytest.mark.xfail
     def test_message_disappeared_after_adding_product_to_basket(self, driver):
         page = ProductPage(driver, link)
         page.open()
@@ -54,6 +55,7 @@ class TestUserAddToBasketFromProductPage:
         page.open()
         page.should_not_be_message_about_adding()
 
+    @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, driver):
         page = ProductPage(driver, link)
         page.open()
@@ -66,7 +68,7 @@ class TestUserAddToBasketFromProductPage:
         page.product_cost_should_be_equal_basket_total_in_success_message()
 
 
-# @pytest.mark.skip
+@pytest.mark.need_review
 def test_guest_can_go_to_login_page_from_product_page(driver):
     page = ProductPage(driver, link)
     page.open()
@@ -77,7 +79,8 @@ def test_guest_can_go_to_login_page_from_product_page(driver):
     login_page.should_be_login_form()
     login_page.should_be_register_form()
 
-# @pytest.mark.skip
+
+@pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(driver):
     page = ProductPage(driver, link)
     page.open()
