@@ -45,6 +45,9 @@ class BasePage:
     def open(self):
         self.driver.get(self.url)
 
+    def should_be_autorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), 'User icon is nolt presented, probably unautorized user'
+
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK)
 
