@@ -51,7 +51,7 @@ class TestUserAddToBasketFromProductPage:
     def setup(self, driver):
         page = LoginPage(driver, link)
         page.open()
-        page.register_new_user(email, '12345678')
+        page.register_new_user(email, password)
         page.should_be_autorized_user()
 
     def test_user_cant_see_success_message(self, driver):
