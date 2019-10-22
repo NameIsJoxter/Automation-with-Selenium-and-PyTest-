@@ -1,6 +1,7 @@
 from .base_page import BasePage
 from .locators import BasketPageLocators
 
+
 class BasketPage(BasePage):
     def should_be_promo_in_empty_basket(self):
         assert self.is_element_present(*BasketPageLocators.EMPTY_BASKET_MESSAGE), 'There is no promo at the empty basket'

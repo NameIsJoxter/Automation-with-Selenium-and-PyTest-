@@ -18,9 +18,7 @@ class TestGuestAddToBasketFromProductPage():
         page.product_name_should_be_present_in_success_message()
         page.should_be_message_basket_total()
         page.product_cost_should_be_equal_basket_total_in_success_message()
-        # time.sleep(10)
 
-    @pytest.mark.skip
     def test_guest_cant_see_success_message_after_adding_product_to_basket(self, driver):
         page = ProductPage(driver, link)
         page.open()
@@ -28,13 +26,13 @@ class TestGuestAddToBasketFromProductPage():
         page.solve_quiz_and_get_code()
         page.should_not_be_message_about_adding()
 
-    @pytest.mark.skip
+    # @pytest.mark.skip
     def test_guest_cant_see_success_message(self, driver):
         page = ProductPage(driver, link)
         page.open()
         page.should_not_be_message_about_adding()
 
-    @pytest.mark.skip
+    # @pytest.mark.skip
     def test_message_disappeared_after_adding_product_to_basket(self, driver):
         page = ProductPage(driver, link)
         page.open()
@@ -44,7 +42,7 @@ class TestGuestAddToBasketFromProductPage():
 
 
 class TestUserAddToBasketFromProductPage:
-    @pytest.fixture
+    @pytest.fixture(scope='function')
     def setup(self, driver):
         page = LoginPage(driver, link)
         page.open()
@@ -66,10 +64,9 @@ class TestUserAddToBasketFromProductPage:
         page.product_name_should_be_present_in_success_message()
         page.should_be_message_basket_total()
         page.product_cost_should_be_equal_basket_total_in_success_message()
-        # time.sleep(10)
 
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_guest_can_go_to_login_page_from_product_page(driver):
     page = ProductPage(driver, link)
     page.open()
@@ -80,7 +77,7 @@ def test_guest_can_go_to_login_page_from_product_page(driver):
     login_page.should_be_login_form()
     login_page.should_be_register_form()
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_guest_cant_see_product_in_basket_opened_from_product_page(driver):
     page = ProductPage(driver, link)
     page.open()

@@ -24,14 +24,14 @@ class BasePage:
         try:
             WebDriverWait(self.driver, timeout, 1, TimeoutException). \
                 until_not(EC.presence_of_element_located((how, what)))
-        except Exception:
+        except TimeoutException:
             return False
         return True
 
     def is_element_present(self, how, what):
         try:
             self.driver.find_element(how, what)
-        except Exception:
+        except TimeoutException:
             return False
         return True
 
