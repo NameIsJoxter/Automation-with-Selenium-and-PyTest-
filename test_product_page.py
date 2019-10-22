@@ -1,9 +1,13 @@
+from faker import Faker
 import pytest
-import time
 from pages.product_page import ProductPage
 from pages.login_page import LoginPage
 from pages.basket_page import BasketPage
 
+f = Faker()
+
+email = f.email()
+password = f.password()
 link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019'
 
 
@@ -47,7 +51,7 @@ class TestUserAddToBasketFromProductPage:
     def setup(self, driver):
         page = LoginPage(driver, link)
         page.open()
-        page.register_new_user(str(time.time())+'fakemail.org', '12345678')
+        page.register_new_user(email, '12345678')
         page.should_be_autorized_user()
 
     def test_user_cant_see_success_message(self, driver):
