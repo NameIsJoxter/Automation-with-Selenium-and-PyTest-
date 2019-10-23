@@ -47,7 +47,7 @@ class TestGuestAddToBasketFromProductPage():
 
 
 class TestUserAddToBasketFromProductPage:
-    @pytest.fixture(scope='function')
+    @pytest.fixture(scope='function', autouse=True)
     def test_setup(self, driver):
         page = LoginPage(driver, 'http://selenium1py.pythonanywhere.com/ru/accounts/login/')    # WTD get rid of hardcoded link
         page.open()
