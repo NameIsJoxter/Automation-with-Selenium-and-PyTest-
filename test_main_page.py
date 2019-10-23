@@ -25,4 +25,3 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(driver):
     basket_page = BasketPage(driver, driver.current_url)
     basket_page.should_be_promo_in_empty_basket()
     basket_page.should_not_be_basket_items()
-

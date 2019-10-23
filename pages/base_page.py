@@ -7,9 +7,8 @@ from .locators import BasePageLocators
 
 
 class BasePage:
-    def __init__(self, driver, url, timeout=4):
+    def __init__(self, driver, url):
         self.driver = driver
-        # self.driver.implicitly_wait(timeout)
         self.url = url
 
     def go_to_login_page(self):
@@ -46,7 +45,8 @@ class BasePage:
         self.driver.get(self.url)
 
     def should_be_autorized_user(self):
-        assert self.is_element_present(*BasePageLocators.USER_ICON), 'User icon is nolt presented, probably unautorized user'
+        assert self.is_element_present(*BasePageLocators.USER_ICON), \
+            'User icon is nolt presented, probably unautorized user'
 
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK)
