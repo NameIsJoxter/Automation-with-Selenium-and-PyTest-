@@ -4,14 +4,10 @@ from .locators import BasePageLocators, LoginPageLocators
 
 class LoginPage(BasePage):
     def register_new_user(self, email, password):
-        email_input = self.driver.find_element(*LoginPageLocators.EMAIL_REGISTRATION)
-        email_input.send_keys(email)
-        password_input = self.driver.find_element(*LoginPageLocators.PASSWORD_REGISTRATION)
-        password_input.send_keys(password)
-        password_confirm_input = self.driver.find_element(*LoginPageLocators.PASSWORD_REGISTRATION_CONFIRM)
-        password_confirm_input.send_keys(password)
-        btn = self.driver.find_element(*LoginPageLocators.REGISTER_BUTTON)
-        btn.click()
+        self.driver.find_element(*LoginPageLocators.EMAIL_REGISTRATION).send_keys(email)
+        self.driver.find_element(*LoginPageLocators.PASSWORD_REGISTRATION).send_keys(password)
+        self.driver.find_element(*LoginPageLocators.PASSWORD_REGISTRATION_CONFIRM).send_keys(password)
+        self.driver.find_element(*LoginPageLocators.REGISTER_BUTTON).click()
 
     def should_be_login_page(self):
         self.should_be_login_url()
