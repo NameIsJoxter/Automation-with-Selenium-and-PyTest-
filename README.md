@@ -1,7 +1,7 @@
 Hi there and thnx for your time! 
 
 #### Set environment
-Get python: 
+Get python 3.7+ (with 3.6+ you'll need to fix some imports manually): 
 ```bash
 $ sudo add-apt-repository ppa:deadsnakes/ppa
 $ sudo apt-get install python3.7
