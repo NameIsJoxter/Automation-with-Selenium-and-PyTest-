@@ -1,4 +1,5 @@
 Hi there and thnx for your time! 
+This small example was made several years ago according to the course on the site stepik.org.  
 
 #### Set environment
 Get python 3.7+ (with 3.6+ you'll need to fix some imports manually): 
